@@ -1,12 +1,6 @@
-function computeIncrement(maxTimeout) {
-    return maxTimeout / 9.0
-}
-
 let interval = null
 let maxTimeout = 50
-let increment = computeIncrement(maxTimeout)
-let lastNumber = 1
-let delta = 3
+let increment = maxTimeout / 9.0
 
 function startScrolling(number) {
     if (interval) {
