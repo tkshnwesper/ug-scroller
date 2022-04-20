@@ -1,5 +1,5 @@
 let interval = null
-let maxTimeout = 50
+let maxTimeout = 100
 let increment = maxTimeout / 9.0
 
 function startScrolling(number) {
@@ -9,16 +9,13 @@ function startScrolling(number) {
     interval = setInterval(
         window.scrollBy,
         1 + maxTimeout - increment * number,
-        {
-            top: 1,
-        }
+        0, 1
     )
 }
 
 document.addEventListener('keydown', function (event) {
     number = parseInt(event.key)
     if (number) {
-        lastNumber = number
         startScrolling(number)
     } else if (event.key === 'Escape') {
         clearInterval(interval)
